@@ -1,6 +1,4 @@
-Here's a sample `README.md` file template for your project:
 
-```markdown
 # My Restaurant App
 
 My Restaurant App is a beautifully designed, responsive web application built using React.js that allows users to explore various aspects of a restaurant, including menu items, client testimonials, booking a table, and contact details. The app features modern UI/UX elements, smooth animations, and an intuitive interface for seamless navigation.

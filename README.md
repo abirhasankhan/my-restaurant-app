@@ -16,7 +16,7 @@ My Restaurant App is a beautifully designed, responsive web application built us
 
 ## Demo
 
-Check out the live demo [here](#).
+Check out the live demo [here](https://abirhasankhan.github.io/my-restaurant-app/).
 
 ## Features
 

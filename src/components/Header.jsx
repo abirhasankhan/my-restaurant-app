@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
-import { FiMenu, FiX } from "react-icons/fi"; // Import menu icons from react-icons
+import { FiMenu, FiX } from "react-icons/fi";
 
 function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [activeSection, setActiveSection] = useState("home"); // State to track the active section
+	const [activeSection, setActiveSection] = useState("home");
 
 	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
 	const handleSetActive = (section) => {
-		setActiveSection(section);
+		// Only set active section if it's not the Book a Table button
+		if (section !== "bookTable") setActiveSection(section);
 	};
 
 	const handleBookTableClick = () => {
-		setActiveSection("bookTable"); // Explicitly set the active section
+		setActiveSection("bookTable"); // Set Book a Table as active section
 		toggleMenu(); // Close the menu if it's open
 	};
 
@@ -34,13 +35,13 @@ function Header() {
 									to={section}
 									smooth={true}
 									duration={500}
-									spy={true} // Ensures the active section is tracked while scrolling
-									onSetActive={() => handleSetActive(section)} // This triggers when the section is active
+									spy={true}
+									onSetActive={() => handleSetActive(section)}
 									className={`cursor-pointer ${
 										activeSection === section
 											? "text-yellow-300 border-b-2 border-yellow-300"
-											: "hover:text-yellow-300 transition duration-300"
-									}`}
+											: "hover:text-yellow-300"
+									} transition-all duration-300 transform hover:scale-110 hover:font-bold`}
 								>
 									{section.charAt(0).toUpperCase() + section.slice(1)}
 								</Link>
@@ -60,7 +61,7 @@ function Header() {
 				<div className="hidden md:block">
 					<Link to="bookTable" smooth={true} duration={500}>
 						<button
-							onClick={handleBookTableClick} // Ensure active section is set when clicked
+							onClick={handleBookTableClick}
 							className={`${
 								activeSection === "bookTable"
 									? "bg-yellow-500"
@@ -87,13 +88,13 @@ function Header() {
 									onSetActive={() => handleSetActive(section)}
 									onClick={() => {
 										handleSetActive(section);
-										toggleMenu(); // Close menu on link click
+										toggleMenu();
 									}}
 									className={`cursor-pointer block ${
 										activeSection === section
 											? "text-yellow-300 border-b-2 border-yellow-300"
-											: "hover:text-yellow-300 transition duration-300"
-									}`}
+											: "hover:text-yellow-300"
+									} transition-all duration-300 transform hover:scale-105 hover:font-bold`}
 								>
 									{section.charAt(0).toUpperCase() + section.slice(1)}
 								</Link>
@@ -105,7 +106,7 @@ function Header() {
 								smooth={true}
 								duration={500}
 								onClick={() => {
-									handleBookTableClick(); // Ensure active section is set when clicked
+									handleBookTableClick();
 								}}
 							>
 								<button

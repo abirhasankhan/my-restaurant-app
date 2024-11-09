@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.PNG', '**/*.jpg', '**/*.jpeg', '**/*.gif'], // Specify image formats to include as assets
+  base: '/my-restaurant-app/', // Ensure this matches your GitHub repository name
+  build: {
+    outDir: 'dist', // Ensures output is in the correct folder
+  },
 })

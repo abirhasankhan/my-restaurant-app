@@ -1,5 +1,5 @@
 import React from "react";
-import foodImage from "../images/image01.jpg"; // Replace with your image path
+import foodImage from "../images/pexels-chanwalrus-958545.jpg"; // Replace with your image path
 
 function Home() {
 	return (

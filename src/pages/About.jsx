@@ -1,7 +1,7 @@
 // AboutSection.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion"; // Import motion from framer-motion
-import foodImage from "../images/image01.jpg"; // Replace with your main image path
+import foodImage from "../images/pexels-abhinavcoca-291528.jpg"; // Replace with your main image path
 
 function About() {
 	const [activeSection, setActiveSection] = useState("about"); // State to track active section
